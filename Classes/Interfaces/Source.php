@@ -5,9 +5,9 @@ interface Source {
     const VERSION = '9.0.1';
 
     /**
-     * @param string $package
+     * @param string $feature
      *
      * @return string
      */
-    public function getJs(string $package): string;
+    public function getJs(string $feature): string;
 }

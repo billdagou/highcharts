@@ -9,6 +9,10 @@ You can load the library in your Fluid template.
 
 	<highcharts:load />
 
+You can load some specific feature, like `3d` or `more`.
+
+    <highcharts:load feature="more" />
+
 You can also load your own library.
 
     <highcharts:load src="..." />
