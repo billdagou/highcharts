@@ -31,4 +31,13 @@ abstract class AbstractSource implements Source, SingletonInterface {
                 return 'highcharts-more.js';
         }
     }
+
+    /**
+     * @param string $module
+     *
+     * @return string
+     */
+    public function getModule(string $module): string {
+        return static::URL.'modules/'.$module;
+    }
 }

@@ -10,4 +10,11 @@ interface Source {
      * @return string
      */
     public function getJs(string $feature): string;
+
+    /**
+     * @param string $module
+     *
+     * @return string
+     */
+    public function getModule(string $module): string;
 }
