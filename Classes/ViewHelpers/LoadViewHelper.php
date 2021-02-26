@@ -14,7 +14,7 @@ class LoadViewHelper extends ScriptViewHelper {
     public function initializeArguments(): void {
         parent::initializeArguments();
 
-        $this->registerArgument('package', 'string', 'FontAwesome package to load.', FALSE, 'all');
+        $this->registerArgument('package', 'string', 'HighCharts package to load.', FALSE, 'default');
         $this->registerArgument('disableSource', 'boolean', 'Disable Source.', FALSE, FALSE);
         $this->overrideArgument(
             'identifier',
