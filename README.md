@@ -11,7 +11,7 @@ You can load the library in your Fluid template.
 
 You can load some specific feature, like `3d` or `more`.
 
-    <highcharts:load feature="more" />
+    <highcharts:load feature="3d" />
 
 You can also load your own library.
 
