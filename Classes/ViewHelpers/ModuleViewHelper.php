@@ -7,7 +7,7 @@ use Dagou\Highcharts\Utility\ExtensionUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\ViewHelpers\Asset\ScriptViewHelper;
 
-class LoadModuleViewHelper extends ScriptViewHelper {
+class ModuleViewHelper extends ScriptViewHelper {
     public function initializeArguments(): void {
         parent::initializeArguments();
 
