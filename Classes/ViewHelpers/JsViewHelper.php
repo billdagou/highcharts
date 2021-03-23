@@ -11,7 +11,6 @@ class JsViewHelper extends ScriptViewHelper {
     public function initializeArguments(): void {
         parent::initializeArguments();
 
-        $this->registerArgument('feature', 'string', 'HighCharts feature to load.', FALSE, 'default');
         $this->registerArgument('disableSource', 'boolean', 'Disable Source.', FALSE, FALSE);
         $this->overrideArgument(
             'identifier',
@@ -38,8 +37,6 @@ class JsViewHelper extends ScriptViewHelper {
 
             $this->tag->addAttribute('src', $source->getJs());
         }
-
-        $this->arguments['identifier'] .= '.'.$this->arguments['feature'];
 
         return parent::render();
     }
