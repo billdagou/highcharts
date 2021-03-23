@@ -7,18 +7,18 @@ use Dagou\Highcharts\Utility\ExtensionUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\ViewHelpers\Asset\ScriptViewHelper;
 
-class JsViewHelper extends ScriptViewHelper {
+class PluginViewHelper extends ScriptViewHelper {
     public function initializeArguments(): void {
         parent::initializeArguments();
 
-        $this->registerArgument('feature', 'string', 'HighCharts feature to load.', FALSE, 'default');
+        $this->registerArgument('plugin', 'string', 'HighCharts plugin to load.', TRUE);
         $this->registerArgument('disableSource', 'boolean', 'Disable Source.', FALSE, FALSE);
         $this->overrideArgument(
             'identifier',
             'string',
             'Use this identifier within templates to only inject your JS once, even though it is added multiple times.',
             FALSE,
-            'highcharts'
+            'highcharts.plugin'
         );
     }
 
@@ -36,10 +36,10 @@ class JsViewHelper extends ScriptViewHelper {
                 $source = GeneralUtility::makeInstance(Local::class);
             }
 
-            $this->tag->addAttribute('src', $source->getJs());
+            $this->tag->addAttribute('src', $source->getPlugin($this->arguments['plugin']));
         }
 
-        $this->arguments['identifier'] .= '.'.$this->arguments['feature'];
+        $this->arguments['identifier'] .= '.'.$this->arguments['plugin'];
 
         return parent::render();
     }

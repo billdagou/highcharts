@@ -5,11 +5,16 @@ interface Source {
     const VERSION = '9.0.1';
 
     /**
-     * @param string $feature
+     * @return string
+     */
+    public function getJs(): string;
+
+    /**
+     * @param string $plugin
      *
      * @return string
      */
-    public function getJs(string $feature): string;
+    public function getPlugin(string $plugin): string;
 
     /**
      * @param string $module

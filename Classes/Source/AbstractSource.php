@@ -8,28 +8,26 @@ abstract class AbstractSource implements Source, SingletonInterface {
     const URL = '';
 
     /**
-     * @param string $feature
-     *
      * @return string
      */
-    public function getJs(string $feature): string {
-        return static::URL.$this->getJsBuild($feature);
+    public function getJs(): string {
+        return static::URL.$this->getJsBuild();
     }
 
     /**
-     * @param string $feature
+     * @return string
+     */
+    protected function getJsBuild(): string {
+        return 'highcharts.js';
+    }
+
+    /**
+     * @param string $plugin
      *
      * @return string
      */
-    protected function getJsBuild(string $feature): string {
-        switch ($feature) {
-            case 'default':
-                return 'highcharts.js';
-            case '3d':
-                return 'highcharts-3d.js';
-            case 'more':
-                return 'highcharts-more.js';
-        }
+    public function getPlugin(string $plugin): string {
+        return static::URL.'highcharts-'.$plugin.'.js';
     }
 
     /**
@@ -38,6 +36,6 @@ abstract class AbstractSource implements Source, SingletonInterface {
      * @return string
      */
     public function getModule(string $module): string {
-        return static::URL.'modules/'.$module;
+        return static::URL.'modules/'.$module.'.js';
     }
 }
